@@ -1,0 +1,275 @@
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+} from 'react-router-dom';
+
+// Layout Component
+function Layout({ children }) {
+  return (
+    <div className="min-h-screen flex flex-col bg-gradient-to-tr from-zinc-50 via-zinc-100 to-white">
+      <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur shadow-sm">
+        <nav className="max-w-4xl mx-auto flex flex-wrap items-center justify-between py-3 px-5 text-base">
+          <div className="font-extrabold text-xl tracking-tight text-zinc-800">Eshan Khan</div>
+          <div className="flex gap-3 md:gap-6 mt-3 md:mt-0 text-sm font-medium">
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) =>
+                `px-3 py-1 rounded transition-colors ${
+                  isActive
+                    ? 'bg-zinc-200 text-zinc-900 font-bold'
+                    : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900'
+                }`
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `px-3 py-1 rounded transition-colors ${
+                  isActive
+                    ? 'bg-zinc-200 text-zinc-900 font-bold'
+                    : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900'
+                }`
+              }
+            >
+              About Me
+            </NavLink>
+            <NavLink
+              to="/coding-projects"
+              className={({ isActive }) =>
+                `px-3 py-1 rounded transition-colors ${
+                  isActive
+                    ? 'bg-zinc-200 text-zinc-900 font-bold'
+                    : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900'
+                }`
+              }
+            >
+              Coding Projects
+            </NavLink>
+            <NavLink
+              to="/solidworks-projects"
+              className={({ isActive }) =>
+                `px-3 py-1 rounded transition-colors ${
+                  isActive
+                    ? 'bg-zinc-200 text-zinc-900 font-bold'
+                    : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900'
+                }`
+              }
+            >
+              SolidWorks
+            </NavLink>
+            <NavLink
+              to="/autocad-projects"
+              className={({ isActive }) =>
+                `px-3 py-1 rounded transition-colors ${
+                  isActive
+                    ? 'bg-zinc-200 text-zinc-900 font-bold'
+                    : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900'
+                }`
+              }
+            >
+              AutoCAD
+            </NavLink>
+            <NavLink
+              to="/general-engineering-projects"
+              className={({ isActive }) =>
+                `px-3 py-1 rounded transition-colors ${
+                  isActive
+                    ? 'bg-zinc-200 text-zinc-900 font-bold'
+                    : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900'
+                }`
+              }
+            >
+              General Eng
+            </NavLink>
+            <a
+              href="https://www.linkedin.com/in/eshan34khan/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="ml-1 px-3 py-1 rounded border bg-blue-50 text-blue-700 hover:bg-blue-100 hover:text-blue-900 transition-colors"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </nav>
+      </header>
+      <main className="flex-1 w-full max-w-3xl mx-auto px-3 py-8">{children}</main>
+      <footer className="w-full border-t bg-zinc-50 py-3 mt-10 text-center text-xs text-zinc-500">
+        &copy; {new Date().getFullYear()} Eshan Khan ·{' '}
+        <a
+          href="https://www.linkedin.com/in/eshan34khan/"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="underline hover:text-blue-700"
+        >
+          LinkedIn
+        </a>
+      </footer>
+    </div>
+  );
+}
+
+// Page placeholders
+function Home() {
+  return (
+    <div className="bg-white/80 rounded-md shadow-lg px-8 py-10 flex flex-col items-center gap-5">
+      <h1 className="text-4xl md:text-5xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-zinc-800 to-blue-800">
+        Eshan Khan
+      </h1>
+      <p className="text-lg text-zinc-700 max-w-xl text-center">
+        Versatile engineer passionate about coding, CAD design, and multidisciplinary problem solving. Explore my portfolio below!
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full mt-8">
+        <CardLink label="Coding Projects" link="/coding-projects" color="from-purple-400 to-blue-400" />
+        <CardLink label="SolidWorks" link="/solidworks-projects" color="from-orange-300 to-yellow-400" />
+        <CardLink label="AutoCAD" link="/autocad-projects" color="from-green-300 to-lime-300" />
+        <CardLink label="General Eng" link="/general-engineering-projects" color="from-rose-400 to-amber-400" />
+        <CardLink label="About Me" link="/about" color="from-sky-200 to-indigo-300" />
+      </div>
+    </div>
+  );
+}
+
+function CardLink({ label, link, color }) {
+  return (
+    <NavLink to={link} className="transition-transform block">
+      <div
+        className={`rounded-lg bg-gradient-to-br ${color} shadow-md h-24 flex items-center justify-center text-xl font-bold text-zinc-800 hover:scale-105 active:scale-100 cursor-pointer border border-zinc-200/80 transition-all`}
+      >
+        {label}
+      </div>
+    </NavLink>
+  );
+}
+
+function About() {
+  return (
+    <div className="bg-white/80 rounded-md shadow px-6 py-8">
+      <h2 className="text-2xl font-bold mb-2 text-zinc-800">About Me</h2>
+      <p className="text-zinc-700">Short bio goes here.</p>
+    </div>
+  );
+}
+function CodingProjects() {
+  return (
+    <div className="bg-white/80 rounded-md shadow px-6 py-8">
+      <h2 className="text-2xl font-bold mb-2 text-zinc-800">Coding Projects</h2>
+      <p className="text-zinc-700">List coding projects here.</p>
+    </div>
+  );
+}
+function SolidWorksProjects() {
+  return (
+    <div className="bg-white/80 rounded-md shadow px-6 py-8">
+      <h2 className="text-2xl font-bold mb-2 text-zinc-800">SolidWorks Projects</h2>
+      <p className="text-zinc-700">List SolidWorks projects here.</p>
+    </div>
+  );
+}
+function AutoCADProjects() {
+  return (
+    <div className="space-y-8">
+      {/* Shaft project */}
+      <div className="bg-white/90 rounded-md shadow p-6 flex flex-col md:flex-row gap-6 items-start">
+        <img
+          src="/autocad-shaft-v2.png"
+          alt="Shaft 2D Technical Drawing - AutoCAD (updated)"
+          className="w-full md:w-56 max-h-40 object-contain rounded border bg-zinc-100"
+        />
+        <div className="flex-1">
+          <h3 className="text-xl font-bold text-zinc-800 mb-1">Shaft - 2D Technical Drawing</h3>
+          <p className="mb-3 text-zinc-600">
+            This project showcases a detailed 2D technical drawing of a precision-machined bracket, including accurate dimensions, hole specifications, chamfers, and radii. It was designed for use in mechanical assemblies requiring exact tolerances and mounting compatibility.
+          </p>
+          <div className="mb-2">
+            <span className="font-semibold text-zinc-700">Key Skills Used:</span>
+            <ul className="list-disc ml-6 mt-1 text-zinc-700">
+              <li>Geometric dimensioning and tolerancing (GD&amp;T)</li>
+              <li>Use of layers, object snaps, and precision tools</li>
+              <li>Orthographic projection and annotation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {/* Flange Plate Assembly project */}
+      <div className="bg-white/90 rounded-md shadow p-6 flex flex-col md:flex-row gap-6 items-start">
+        {/* Project image */}
+        <img
+          src="/flange-plate-assembly.png"
+          alt="Flange Plate Assembly AutoCAD Drawing"
+          className="w-full md:w-56 max-h-40 object-contain rounded border bg-zinc-100"
+        />
+        <div className="flex-1">
+          <h3 className="text-xl font-bold text-zinc-800 mb-1">Flange Plate Assembly</h3>
+          <p className="mb-3 text-zinc-600">
+            This AutoCAD drawing represents a flange plate with multiple hole placements and inner component outlines, depicted using hidden lines and centerlines for clarity. The layout reflects mechanical assembly readiness with a focus on symmetry and fitment precision.
+          </p>
+          <div className="mb-2">
+            <span className="font-semibold text-zinc-700">Key Skills Used:</span>
+            <ul className="list-disc ml-6 mt-1 text-zinc-700">
+              <li>AutoCAD 2D orthographic drawing</li>
+              <li>Interpretation and application of hidden lines</li>
+              <li>Centerline construction and alignment</li>
+              <li>Symmetrical component layout</li>
+              <li>Engineering visualization</li>
+              <li>Layer management for technical clarity</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      {/* Multi-View Cylindrical Housing project */}
+      <div className="bg-white/90 rounded-md shadow p-6 flex flex-col md:flex-row gap-6 items-start">
+        {/* Placeholder for project image */}
+        <div className="w-full md:w-56 flex-shrink-0 flex items-center justify-center h-40 bg-zinc-100 rounded border border-dashed border-zinc-300">
+          <span className="text-zinc-400">[Project Image]</span>
+        </div>
+        <div className="flex-1">
+          <h3 className="text-xl font-bold text-zinc-800 mb-1">Multi-View Technical Drawing of a Cylindrical Housing with Sectional Detail</h3>
+          <p className="mb-3 text-zinc-600">
+            This detailed AutoCAD drawing features multiple orthographic views—including top, front, right, and bottom projections—along with a sectional view (A-A) to clearly depict the internal geometry of a cylindrical mechanical housing. The drawing highlights precision dimensioning and the use of sectional representation to convey complex interior features.
+          </p>
+          <div className="mb-2">
+            <span className="font-semibold text-zinc-700">Key Skills Used:</span>
+            <ul className="list-disc ml-6 mt-1 text-zinc-700">
+              <li>Multi-view orthographic projection</li>
+              <li>Sectional drawing (cutaway view)</li>
+              <li>Advanced dimensioning and tolerancing</li>
+              <li>Hidden and centerline representation</li>
+              <li>Technical drafting conventions</li>
+              <li>Cylindrical and symmetrical component modeling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+function GeneralEngProjects() {
+  return (
+    <div className="bg-white/80 rounded-md shadow px-6 py-8">
+      <h2 className="text-2xl font-bold mb-2 text-zinc-800">General Engineering Projects</h2>
+      <p className="text-zinc-700">List other engineering projects here.</p>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/coding-projects" element={<CodingProjects />} />
+          <Route path="/solidworks-projects" element={<SolidWorksProjects />} />
+          <Route path="/autocad-projects" element={<AutoCADProjects />} />
+          <Route path="/general-engineering-projects" element={<GeneralEngProjects />} />
+        </Routes>
+      </Layout>
+    </Router>
+  );
+}

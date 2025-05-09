@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eshan Khan Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #222;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+    }
+    nav button {
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    nav button:hover {
+      background-color: #ddd;
+    }
+    section {
+      display: none;
+      padding: 2rem;
+    }
+    .active {
+      display: block;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1rem;
+      width: 300px;
+    }
+    .card img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+    .card h3 {
+      margin-top: 0.5rem;
+    }
+
+    .cardgen {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+}
+
+.cardgen h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.subcard-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.subcard {
+  background-color: #e0d4d4;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  flex: 1 1 30%;
+  min-width: 280px;
+  max-width: 32%;
+  box-sizing: border-box;
+}
+
+.subcard img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.video-thumbnail {
+    position: relative;
+    display: inline-block;
+}
+
+.video-thumbnail img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    background: url('https://img.icons8.com/ios-filled/100/ffffff/play--v1.png') no-repeat center center;
+    background-size: 60%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* allows clicks to pass through to the link */
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Eshan Khan</h1>
+  </header>
+  <nav>
+    <button onclick="showSection('about')">About Me</button>
+    <button onclick="showSection('solidworks')">SolidWorks</button>
+    <button onclick="showSection('autocad')">AutoCAD</button>
+    <button onclick="showSection('general')">General Eng</button>
+  </nav>
+
+  <!-- <section id="home" class="active">
+    <h2>Welcome to my Dome</h2>
+    <p>
+        Hi, I'm <strong>Eshan Khan</strong>, a Mechatronics Engineering student who enjoys turning coffee into CAD models and chaos into functioning (mostly) mechanisms. I’ve always been drawn to solving tough problems—whether it’s designing a part that won’t explode under load or figuring out why my SolidWorks assembly just turned itself into a modern art sculpture. From firmware at Electrium Mobility to teaching at YRT, I’ve had a blast mixing hands-on work with brain-bending logic puzzles.
+      </p>
+      <p>
+        When I’m not sketching in AutoCAD or trying to remember why I created that weird constraint, you can find me at the gym. It’s the one place where gains are linear and bugs don’t exist (unless you count dropping a dumbbell on your foot). I also enjoy watching sci-fi movies and mentally critiquing their engineering accuracy—because who <em>really</em> believes a spaceship can turn like a racecar?
+      </p>
+      <p>
+        Professionally, I’ve worked on firmware for embedded devices and led tutoring sessions where I explained math, physics, and how not to throw your calculator out the window. These experiences taught me to communicate clearly, adapt quickly, and stay calm when technology decides to do its own thing.
+      </p>
+      <p>
+        I'm always looking for my next challenge—whether it’s a cool internship, a design problem, or just a debate over whether AutoCAD or SolidWorks is more stubborn. Let’s connect and build something awesome (or at least get it to compile).
+      </p>
+  </section> -->
+
+  <section id="about" class = "active">
+    <h2>About Me</h2>
+    <p>
+        Hi, I'm <strong>Eshan Khan</strong>, a Mechatronics Engineering student who enjoys turning coffee into CAD models and chaos into functioning (mostly) mechanisms. I’ve always been drawn to solving tough problems—whether it’s designing a part that won’t explode under load or figuring out why my SolidWorks assembly just turned itself into a modern art sculpture. From firmware at Electrium Mobility to teaching at YRT, I’ve had a blast mixing hands-on work with brain-bending logic puzzles.
+      </p>
+      <p>
+        When I’m not sketching in AutoCAD or trying to remember why I created that weird constraint, you can find me at the gym. It’s the one place where gains are linear and bugs don’t exist (unless you count dropping a dumbbell on your foot). I also enjoy watching sci-fi movies and mentally critiquing their engineering accuracy—because who <em>really</em> believes a spaceship can turn like a racecar?
+      </p>
+      <p>
+        Professionally, I’ve worked on firmware for embedded devices and led tutoring sessions where I explained math, physics, and how not to throw your calculator out the window. These experiences taught me to communicate clearly, adapt quickly, and stay calm when technology decides to do its own thing.
+      </p>
+      <p>
+        I'm always looking for my next challenge—whether it’s a cool internship, a design problem, or just a debate over whether AutoCAD or SolidWorks is more stubborn. Let’s connect and build something awesome (or at least get it to compile).
+      </p>
+  </section>
+
+  <section id="solidworks">
+    <h2>SolidWorks Projects</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="images/solidworks1.png" alt="Project 1">
+        <h3>Precision Shaft Connector</h3>
+        <p>This SolidWorks model showcases a custom-machined shaft connector featuring symmetrical cylindrical extensions, a central block with a through-bore, and smooth transition fillets. Designed for potential use in mechanical linkages or rotating systems, the part demonstrates balanced geometry and structural alignment.
+
+        </p>
+        <p><strong>Key Skills Used:</strong>
+            <ul className="list-disc ml-6 mt-1 text-zinc-700">
+                <li>Use of revolved and extruded features</li>
+                <li>Application of fillets and chamfers for smooth transitions</li>
+                <li>Creation of symmetrical geometry using mirror and pattern tools</li>
+                <li>Accurate placement of holes and bores for mechanical integration</li>
+                <li>Understanding of mechanical fit and function principles</li>
+            </ul>
+        </p>
+      </div>
+      <div class="card">
+        <img src="images/solidworks2.png" alt="Project 2">
+        <h3>Triple-Bore Mounting Plate</h3>
+        <p>This part is a simple yet functional mounting plate designed with three equally spaced counterbored holes, ideal for securing mechanical components or providing a stable base for assemblies. Its symmetrical design ensures ease of integration into larger systems.
+
+        </p>
+        <p><strong>Key Skills Used</strong>
+            <ul className="list-disc ml-6 mt-1 text-zinc-700">
+                <li>Use of revolved and extruded features</li>
+                <li>Application of counterbore holes using the Hole Wizard</li>
+                <li>Mastery of sketch constraints and dimensioning</li>
+                <li>Implementation of linear patterning for hole alignment</li>
+                <li>Focus on symmetry and mechanical design for assembly</li>
+            </ul>
+        </p>
+      </div>
+      <div class="card">
+        <img src="images/solidworks3.png" alt="Project 3">
+        <h3>Flat Triple-Hole Link Plate</h3>
+        <p>This model represents a minimalist link plate designed with three uniformly spaced through-holes. The part is optimized for lightweight structural or mechanical applications where components must be connected or aligned.
+
+        </p>
+        <p><strong>Key Skills Used:</strong>
+            <ul className="list-disc ml-6 mt-1 text-zinc-700">
+                <li>Use of revolved and extruded features</li>
+                <li>Implementation of through-holes using the Hole Wizard</li>
+                <li>Mastery of sketch constraints and dimensioning</li>
+                <li>Implementation of linear patterning for hole alignment</li>
+                <li>Understanding of mechanical linkage and alignment principles</li>
+            </ul>
+        </p>
+      </div>
+      <div class="card">
+        <img src="images/solidworks4.png" alt="Project 4">
+        <h3>Keychain Spacer</h3>
+        <p>This part is a simple spacer designed for use in a keychain assembly. It provides separation between individual keys or components, improving organization and accessibility while maintaining durability in daily use.
+        
+        </p>
+        <p><strong>Key Skills Used:</strong>
+            <ul className="list-disc ml-6 mt-1 text-zinc-700">
+                <li>Use of revolved features or extruded cuts to create a semicircle cut</li>
+                <li>Application of sketch constraints for circular geometry</li>
+                <li>Mastery of dimensioning for inner and outer diameters</li>
+            </ul>
+        </p>
+      </div>
+      <div class="card">
+        <img src="images/solidworks5.png" alt="Project 5">
+        <h3>Decorative Bird Fountain Model</h3>
+        <p>This project involved designing a decorative bird fountain using SolidWorks, focusing on aesthetic curves, fluid-friendly geometry, and structural balance. The design incorporates a multi-tiered basin system with a perched bird detail, intended for both ornamental and functional use in garden settings. The model was built with attention to symmetry, proportions, and ease of manufacturing through 3D printing or molding.
+
+        </p>
+        <p><strong>Key Skills Used:</strong>
+            <ul className="list-disc ml-6 mt-1 text-zinc-700">
+                <li>Surface modeling and loft features</li>
+                <li>Revolved and extruded boss/base operations</li>
+                <li>Circular patterning and symmetry design</li>
+                <li>Assembly of multiple components</li>
+            </ul>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="autocad">
+    <h2>AutoCAD Projects</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="images/autocad1.png" alt="AutoCAD Project 1">
+        <h3>Shaft - 2D Technical Drawing</h3>
+        <p>This project showcases a detailed 2D technical drawing of a precision-machined bracket, including accurate dimensions, hole specifications, chamfers, and radii. It was designed for use in mechanical assemblies requiring exact tolerances and mounting compatibility.</p>
+        <p><strong>Key Skills Used:</strong>
+            <ul className="list-disc ml-6 mt-1 text-zinc-700">
+                <li>Geometric dimensioning and tolerancing (GD&amp;T)</li>
+                <li>Use of layers, object snaps, and precision tools</li>
+                <li>Orthographic projection and annotation</li>
+            </ul>
+        </p>
+      </div>
+      <div class="card">
+        <img src="images/autocad2.png" alt="AutoCAD Project 2">
+        <h3>Flange Plate Assembly</h3>
+        <p>This AutoCAD drawing represents a flange plate with multiple hole placements and inner component outlines, depicted using hidden lines and centerlines for clarity. The layout reflects mechanical assembly readiness with a focus on symmetry and fitment precision.</p>
+        <p><strong>Key Skills Used:</strong> 
+            <ul className="list-disc ml-6 mt-1 text-zinc-700">
+                <li>AutoCAD 2D orthographic drawing</li>
+                <li>Interpretation and application of hidden lines</li>
+                <li>Centerline construction and alignment</li>
+                <li>Symmetrical component layout</li>
+                <li>Engineering visualization</li>
+                <li>Layer management for technical clarity</li>
+            </ul>
+        </p>
+      </div>
+      <div class="card">
+        <img src="images/autocad3.png" alt="AutoCAD Project 3">
+        <h3>Multi-View Technical Drawing of a Cylindrical Housing with Sectional Detail</h3>
+        <p>This detailed AutoCAD drawing features multiple orthographic views, including top, front, right, and bottom projections, along with a sectional view (A-A) to clearly depict the internal geometry of a cylindrical mechanical housing. The drawing highlights precision dimensioning and the use of sectional representation to convey complex interior features.</p>
+        <p><strong>Key Skills Used:</strong> 
+            <ul className="list-disc ml-6 mt-1 text-zinc-700">
+                <li>Multi-view orthographic projection</li>
+                <li>Sectional drawing (cutaway view)</li>
+                <li>Advanced dimensioning and tolerancing</li>
+                <li>Hidden and centerline representation</li>
+                <li>Technical drafting conventions</li>
+                <li>Cylindrical and symmetrical component modeling</li>
+            </ul>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="general">
+    <h2>General Engineering</h2>
+    <!-- EV3 Lego Delivery Robot -->
+    <div class="card-container">
+        
+        <div class="cardgen">
+            <h3>Impact Reducing Bumper System</h3>
+            <div class="subcard-container">
+                <div class="subcard">
+                    <h3>What</h3>
+                    <img src="images/what1.png" alt="Image 1">
+                    <p>
+                        <ul className="list-disc ml-6 mt-1 text-zinc-700">
+                            <li>Designed and implemented a bumper system to reduce the impact of a collision by 50% while enhancing energy dissipation and structural integrity.</li>
+                            <li>Developed a cost-effective solution using popsicle sticks and rubber bands to minimize object deformation and improve impact absorption in low-speed accidents</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="subcard">
+                    <h3>How</h3>
+                    <img src="images/how1.png" alt="Image 2">
+                    <p><ul className="list-disc ml-6 mt-1 text-zinc-700">
+                        <li>Applied engineering skills and GD&T principles to design and optimize the bumper system for maximum energy dissipation and structural integrity.
+                        </li>
+                        <li>Developed a MATLAB simulation to calculate acceleration and velocity during multiple rebounds, analyzing real-time performance data to refine the bumper design.</li>
+                    </ul></p>
+                </div>
+                <div class="subcard">
+                    <h3>Results</h3>
+                    <div class="video-thumbnail">
+                        <a href="https://www.youtube.com/embed/E1mUeeNmWD0" target="_blank">
+                            <img src="images/thumbnail2.png" alt="Watch video">
+                            <div class="play-button"></div>
+                        </a>
+                    </div>
+                    <p>Achieved a 50% reduction in collision impact by optimizing the bumper system design for energy dissipation and structural integrity, enhancing safety and minimizing vehicle damage in low-speed accidents.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lego EV3 -->
+    <div class="card-container">
+        
+        <div class="cardgen">
+            <h3>EV3 Delivery Robot</h3>
+            <div class="subcard-container">
+                <div class="subcard">
+                    <h3>What</h3>
+                    <img src="images/what2.png" alt="Bumper What">
+                    <ul className="list-disc ml-6 mt-1 text-zinc-700">
+                        <li>Developed a smart delivery system capable of autonomous navigation and object handling using EV3 LEGO Mindstorms with 95% accuracy.
+                        </li>
+                        <li>Engineered a reliable solution for automated delivery in various environments, enhancing convenience and efficiency.</li>
+                    </ul>
+                </div>
+                <div class="subcard">
+                    <h3>How</h3>
+                    <img src="images/how2.png" alt="Bumper How">
+                    <ul className="list-disc ml-6 mt-1 text-zinc-700">
+                        <li>Programmed the robot using RobotC to handle autonomous navigation and real-time path adjustments based on sensor feedback.
+
+                        </li>
+                        <li>Designed and implemented the sensor placement and motorized claw mechanism to optimize object detection and handling efficiency.
+                        </li>
+                    </ul>
+                </div>
+                <div class="subcard">
+                    <h3>Results</h3>
+                    <div class="video-thumbnail">
+                        <a href="https://www.youtube.com/shorts/8Ffn10fll-0" target="_blank">
+                            <img src="images/thumbnail1.png" alt="Watch video">
+                            <div class="play-button"></div>
+                        </a>
+                    </div>
+                    <p>Achieved 95% delivery accuracy by combining precise sensor feedback, real-time path adjustments, and efficient object handling, ensuring reliable performance in various environments.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Filler Project -->
+    <!-- <div class="card-container">
+
+        <div class="cardgen">
+            <h3>Filler</h3>
+            <div class="subcard-container">
+                <div class= "subcard">
+                    <h3>What</h3>
+                    <img src="images/filler-what.png" alt="Filler What">
+                    <p>Details coming soon. Expect something epic involving wires, tools, and late nights.</p>
+                </div>
+        
+                <div class="subcard">
+                    <h3>How</h3>
+                    <img src="images/filler-how.png" alt="Filler How">
+                    <p>Magic (and maybe CAD, sensors, and caffeine).</p>
+                </div>
+                <div class="subcard">
+                    <h3>Results</h3>
+                    <img src="images/filler-results.png" alt="Filler Results">
+                    <p>To be revealed once testing is complete and the lab stops smoking.</p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
