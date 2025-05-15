@@ -126,6 +126,41 @@
     pointer-events: none; /* allows clicks to pass through to the link */
 }
 
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80vh;
+  animation: zoomIn 0.3s;
+  border-radius: 8px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0.7);}
+  to {transform: scale(1);}
+}
+
+
 
   </style>
 </head>
@@ -159,7 +194,7 @@
   <section id="about" class = "active">
     <h2>About Me</h2>
     <p>
-        Hi, I'm <strong>Eshan Khan</strong>, a Mechatronics Engineering student who enjoys turning coffee into CAD models and chaos into functioning (mostly) mechanisms. I’ve always been drawn to solving tough problems—whether it’s designing a part that won’t explode under load or figuring out why my SolidWorks assembly just turned itself into a modern art sculpture. From firmware at Electrium Mobility to teaching at YRT, I’ve had a blast mixing hands-on work with brain-bending logic puzzles.
+        Hi, I'm <strong>Eshan Khan</strong>, a 2nd year Mechatronics Engineering student who enjoys turning coffee into CAD models and chaos into functioning (mostly) mechanisms. I’ve always been drawn to solving tough problems—whether it’s designing a part that won’t explode under load or figuring out why my SolidWorks assembly just turned itself into a modern art sculpture. I’ve always had a blast mixing hands-on work with brain-bending logic puzzles.
       </p>
       <p>
         When I’m not sketching in AutoCAD or trying to remember why I created that weird constraint, you can find me at the gym. It’s the one place where gains are linear and bugs don’t exist (unless you count dropping a dumbbell on your foot). I also enjoy watching sci-fi movies and mentally critiquing their engineering accuracy—because who <em>really</em> believes a spaceship can turn like a racecar?
@@ -168,15 +203,66 @@
         Professionally, I’ve worked on firmware for embedded devices and led tutoring sessions where I explained math, physics, and how not to throw your calculator out the window. These experiences taught me to communicate clearly, adapt quickly, and stay calm when technology decides to do its own thing.
       </p>
       <p>
-        I'm always looking for my next challenge—whether it’s a cool internship, a design problem, or just a debate over whether AutoCAD or SolidWorks is more stubborn. Let’s connect and build something awesome (or at least get it to compile).
+        In addition to CAD and hardware, I also enjoy coding, especially when it works on the first try (a rare but glorious event). I've worked with C/C++ for embedded systems, Python for data analysis and automation, and MATLAB when I feel like wrestling equations into submission. Whether it’s debugging a sensor interface or building scripts to speed up workflows, I love the feeling of getting a stubborn block of code to finally behave. You can check out my work on my github.
+      </p>
+      <p>
+        I'm always looking for my next challenge, whether it’s a cool internship, a design problem, or just a debate over whether AutoCAD or SolidWorks is more stubborn. Let’s connect and build something awesome (or at least get it to compile).
       </p>
   </section>
 
   <section id="solidworks">
     <h2>SolidWorks Projects</h2>
     <div class="card-container">
+
       <div class="card">
-        <img src="images/solidworks1.png" alt="Project 1">
+        <img src="images/solidworks7.png" alt="Project 7" onclick="openModal(this)" style="cursor: pointer;">
+        <h3>Tactical Flashlight</h3>
+        <p>This model represents a detailed tactical flashlight design, composed of multiple precision-fit parts with realistic proportions and features. Designed for ergonomic utility and modern aesthetics, the assembly showcases component interlocking, surface detail, and careful color/material selection to simulate real-world functionality.</p>
+        <p><strong>Key Skills Used:</strong>
+            <ul className="list-disc ml-6 mt-1 text-zinc-700">
+                <li>Multi-Body Part Design for complex, modular body structure</li>
+                <li>Revolve Boss/Base and Extrude Cut for lens housing and grip details</li>
+                <li>Shell and Rib features to simulate a realistic, lightweight body</li>
+                <li>Circular Pattern and Mirror Entities for symmetrical geometry</li>
+                <li>Mate Features in Assembly mode for aligning lens, button, and body parts</li>
+                <li>Draft and Fillet Tools to refine plastic casing aesthetics and manufacturability</li>
+            </ul>
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="images/solidworks8.png" alt="Project 8" onclick="openModal(this)" style="cursor: pointer;">
+        <h3>Propane Tank</h3>
+        <p>This model replicates a standard propane tank with accurate proportions and structural features. The design emphasizes industrial realism and precision, featuring safety handles, a nozzle connection, and curvature consistent with actual manufacturing standards.</p>
+        <p><strong>Key Skills Used:</strong>
+            <ul className="list-disc ml-6 mt-1 text-zinc-700">
+                <li>Revolve Boss/Base for the cylindrical body and domed ends</li>
+                <li>Extruded Cut and Boss for valve housing and safety slots</li>
+                <li>Fillet Tool for rounded transitions and safe edge detailing</li>
+                <li>Shell Command to create realistic wall thickness</li>
+                <li>Circular Pattern to replicate symmetrical handle cutouts</li>
+                <li>Dimensioning and Constraints to ensure proper proportions and alignment</li>
+            </ul>
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="images/solidworks6.png" alt="Project 6" onclick="openModal(this)" style="cursor: pointer;">
+        <h3>Decorative Bird Fountain Model</h3>
+        <p>This project involved designing a decorative bird fountain using SolidWorks, focusing on aesthetic curves, fluid-friendly geometry, and structural balance. The design incorporates a multi-tiered basin system with a perched bird detail, intended for both ornamental and functional use in garden settings. The model was built with attention to symmetry, proportions, and ease of manufacturing through 3D printing or molding.</p>
+        <strong>Key Skills Used:</strong>
+          <ul className="list-disc ml-6 mt-1 text-zinc-700">
+              <li>Loft Boss/Base and Loft Cut for smooth transitions between profiles</li>
+              <li>Sweep Boss/Base for pipe and handle features</li>
+              <li>Surface Modeling Tools for organic shaping and curvature refinement</li>
+              <li>Fillet and Chamfer for edge finishing</li>
+              <li>Assembly Mates for precise component positioning</li>
+              <li>Display Manager for rendering materials and appearances</li>
+          </ul>
+      </div>
+
+      <div class="card">
+        <img src="images/solidworks1.png" alt="Project 1" onclick="openModal(this)" style="cursor: pointer;">
         <h3>Precision Shaft Connector</h3>
         <p>This SolidWorks model showcases a custom-machined shaft connector featuring symmetrical cylindrical extensions, a central block with a through-bore, and smooth transition fillets. Designed for potential use in mechanical linkages or rotating systems, the part demonstrates balanced geometry and structural alignment.
 
@@ -191,8 +277,26 @@
             </ul>
         </p>
       </div>
+
+      
       <div class="card">
-        <img src="images/solidworks2.png" alt="Project 2">
+        <img src="images/solidworks9.png" alt="Project 9" onclick="openModal(this)" style="cursor: pointer;">
+        <h3>Wheel Rim</h3>
+        <p>This wheel rim model captures the intricate aesthetics and structural requirements of automotive rims. Designed with an emphasis on symmetry, strength, and style, the rim features contoured spokes, central hub detailing, and realistic curvature for tire fitting.</p>
+        <p><strong>Key Skills Used:</strong>
+            <ul className="list-disc ml-6 mt-1 text-zinc-700">
+                <li>Revolve Boss/Base for circular rim profile and base geometry</li>
+                <li>Extruded Cut and Boss for hub</li>
+                <li>Circular Pattern to evenly replicate spoke design</li>
+                <li>Shell Command to create realistic wall thickness</li>
+                <li>Sketch Relations & Constraints to control geometry and maintain design intent</li>
+                <li>Fillet Tool for smooth edges and aerodynamic transitions</li>
+            </ul>
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="images/solidworks2.png" alt="Project 2" onclick="openModal(this)" style="cursor: pointer;">
         <h3>Triple-Bore Mounting Plate</h3>
         <p>This part is a simple yet functional mounting plate designed with three equally spaced counterbored holes, ideal for securing mechanical components or providing a stable base for assemblies. Its symmetrical design ensures ease of integration into larger systems.
 
@@ -207,8 +311,9 @@
             </ul>
         </p>
       </div>
+
       <div class="card">
-        <img src="images/solidworks3.png" alt="Project 3">
+        <img src="images/solidworks3.png" alt="Project 3" onclick="openModal(this)" style="cursor: pointer;">
         <h3>Flat Triple-Hole Link Plate</h3>
         <p>This model represents a minimalist link plate designed with three uniformly spaced through-holes. The part is optimized for lightweight structural or mechanical applications where components must be connected or aligned.
 
@@ -223,8 +328,9 @@
             </ul>
         </p>
       </div>
+
       <div class="card">
-        <img src="images/solidworks4.png" alt="Project 4">
+        <img src="images/solidworks4.png" alt="Project 4" onclick="openModal(this)" style="cursor: pointer;">
         <h3>Keychain Spacer</h3>
         <p>This part is a simple spacer designed for use in a keychain assembly. It provides separation between individual keys or components, improving organization and accessibility while maintaining durability in daily use.
         
@@ -237,21 +343,7 @@
             </ul>
         </p>
       </div>
-      <div class="card">
-        <img src="images/solidworks5.png" alt="Project 5">
-        <h3>Decorative Bird Fountain Model</h3>
-        <p>This project involved designing a decorative bird fountain using SolidWorks, focusing on aesthetic curves, fluid-friendly geometry, and structural balance. The design incorporates a multi-tiered basin system with a perched bird detail, intended for both ornamental and functional use in garden settings. The model was built with attention to symmetry, proportions, and ease of manufacturing through 3D printing or molding.
 
-        </p>
-        <p><strong>Key Skills Used:</strong>
-            <ul className="list-disc ml-6 mt-1 text-zinc-700">
-                <li>Surface modeling and loft features</li>
-                <li>Revolved and extruded boss/base operations</li>
-                <li>Circular patterning and symmetry design</li>
-                <li>Assembly of multiple components</li>
-            </ul>
-        </p>
-      </div>
     </div>
   </section>
 
@@ -259,7 +351,7 @@
     <h2>AutoCAD Projects</h2>
     <div class="card-container">
       <div class="card">
-        <img src="images/autocad1.png" alt="AutoCAD Project 1">
+        <img src="images/autocad1.png" alt="AutoCAD Project 1" onclick="openModal(this)" style="cursor: pointer;">
         <h3>Shaft - 2D Technical Drawing</h3>
         <p>This project showcases a detailed 2D technical drawing of a precision-machined bracket, including accurate dimensions, hole specifications, chamfers, and radii. It was designed for use in mechanical assemblies requiring exact tolerances and mounting compatibility.</p>
         <p><strong>Key Skills Used:</strong>
@@ -271,7 +363,7 @@
         </p>
       </div>
       <div class="card">
-        <img src="images/autocad2.png" alt="AutoCAD Project 2">
+        <img src="images/autocad2.png" alt="AutoCAD Project 2" onclick="openModal(this)" style="cursor: pointer;">
         <h3>Flange Plate Assembly</h3>
         <p>This AutoCAD drawing represents a flange plate with multiple hole placements and inner component outlines, depicted using hidden lines and centerlines for clarity. The layout reflects mechanical assembly readiness with a focus on symmetry and fitment precision.</p>
         <p><strong>Key Skills Used:</strong> 
@@ -286,7 +378,7 @@
         </p>
       </div>
       <div class="card">
-        <img src="images/autocad3.png" alt="AutoCAD Project 3">
+        <img src="images/autocad3.png" alt="AutoCAD Project 3" onclick="openModal(this)" style="cursor: pointer;">
         <h3>Multi-View Technical Drawing of a Cylindrical Housing with Sectional Detail</h3>
         <p>This detailed AutoCAD drawing features multiple orthographic views, including top, front, right, and bottom projections, along with a sectional view (A-A) to clearly depict the internal geometry of a cylindrical mechanical housing. The drawing highlights precision dimensioning and the use of sectional representation to convey complex interior features.</p>
         <p><strong>Key Skills Used:</strong> 
@@ -313,7 +405,7 @@
             <div class="subcard-container">
                 <div class="subcard">
                     <h3>What</h3>
-                    <img src="images/what1.png" alt="Image 1">
+                    <img src="images/what1.png" alt="Image 1" onclick="openModal(this)" style="cursor: pointer;">
                     <p>
                         <ul className="list-disc ml-6 mt-1 text-zinc-700">
                             <li>Designed and implemented a bumper system to reduce the impact of a collision by 50% while enhancing energy dissipation and structural integrity.</li>
@@ -323,7 +415,7 @@
                 </div>
                 <div class="subcard">
                     <h3>How</h3>
-                    <img src="images/how1.png" alt="Image 2">
+                    <img src="images/how1.png" alt="Image 2" onclick="openModal(this)" style="cursor: pointer;">
                     <p><ul className="list-disc ml-6 mt-1 text-zinc-700">
                         <li>Applied engineering skills and GD&T principles to design and optimize the bumper system for maximum energy dissipation and structural integrity.
                         </li>
@@ -353,7 +445,7 @@
             <div class="subcard-container">
                 <div class="subcard">
                     <h3>What</h3>
-                    <img src="images/what2.png" alt="Bumper What">
+                    <img src="images/what2.png" alt="Bumper What" onclick="openModal(this)" style="cursor: pointer;">
                     <ul className="list-disc ml-6 mt-1 text-zinc-700">
                         <li>Developed a smart delivery system capable of autonomous navigation and object handling using EV3 LEGO Mindstorms with 95% accuracy.
                         </li>
@@ -362,7 +454,7 @@
                 </div>
                 <div class="subcard">
                     <h3>How</h3>
-                    <img src="images/how2.png" alt="Bumper How">
+                    <img src="images/how2.png" alt="Bumper How" onclick="openModal(this)" style="cursor: pointer;">
                     <ul className="list-disc ml-6 mt-1 text-zinc-700">
                         <li>Programmed the robot using RobotC to handle autonomous navigation and real-time path adjustments based on sensor feedback.
 
@@ -414,11 +506,32 @@
     </div> -->
   </section>
 
+
   <script>
     function showSection(id) {
       document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(id).classList.add('active');
     }
   </script>
+
+  <script>
+function openModal(img) {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  modal.style.display = "block";
+  modalImg.src = img.src;
+}
+
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+}
+</script>
+
+
+<div id="imageModal" class="modal" onclick="closeModal()">
+  <span class="modal-close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
 </body>
 </html>
