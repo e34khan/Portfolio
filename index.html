@@ -397,9 +397,50 @@
 
   <section id="general">
     <h2>General Engineering</h2>
-    <!-- EV3 Lego Delivery Robot -->
+    
+    <!-- Human Powered Washing Machine -->
     <div class="card-container">
         
+        <div class="cardgen">
+            <h3>Human Powered Washing Machine</h3>
+            <div class="subcard-container">
+                <div class="subcard">
+                    <h3>Bevel Gear Mechanism</h3>
+                    <img src="images/bevelgearmechanismdesign.png" alt="Bevel Gear" onclick="openModal(this)" style="cursor: pointer;">
+                    <p>In the initial concept phase, I explored a bevel gear system to transfer power at a right angle from the pedal input to the drum. While bevel gears offer smooth torque transmission and are compact, I ultimately rejected this option due to its inability to handle dual pedal inputs efficiently. The interference between bevel gear directions made it unsuitable for a bidirectional or multi-speed setup, especially when switching cycles was required. Additionally, modifying speed in a bevel system would have required physically replacing gears, which wasn't practical for the user.</p>
+                </div>
+                <div class="subcard">
+                    <h3>Chain and Sprocket Mechanism</h3>
+                    <img src="images/chainandsprocketmechanism.png" alt="Chain and Sprocket" onclick="openModal(this)" style="cursor: pointer;">
+                    <p>I selected a chain and sprocket system for our transmission due to its high mechanical efficiency, ease of maintenance, and ability to accommodate variable gear ratios. The design included two sets of sprockets to support both wash/rinse and spin cycles, with a gear selector enabling smooth switching between modes. This setup provided consistent torque transfer and allowed reverse pedaling to enhance washing dynamics. It also gave us the flexibility to optimize for torque and speed by adjusting sprocket tooth counts.</p>
+                </div>
+                <div class="subcard">
+                    <h3>Design of Drive System</h3>
+                    <img src="images/designofdrivesystem.png" alt="Chain and Sprocket" onclick="openModal(this)" style="cursor: pointer;">
+                    <p>The drive system was powered by a crank and pedal assembly, engineered to suit 50th percentile anthropometric data. I used a 170 mm crank arm to balance torque generation and user ergonomics. The pedals were mounted to an input shaft that drove the transmission mechanism. The system was designed to withstand up to 300 N of force per pedal, ensuring durability and power transfer efficiency. Key considerations included ergonomic positioning, torque requirements, and consistent user comfort during extended operation.</p>
+                </div>
+                <div class="subcard">
+                    <h3>Design of Drum</h3>
+                    <img src="images/designofdrum.png" alt="Chain and Sprocket" onclick="openModal(this)" style="cursor: pointer;">
+                    <p>The drum was designed to combine a cylindrical shape with a truncated cone to optimize both the tumbling motion for washing and space efficiency for water collection and drainage. I selected aluminum 6061-T6 for its lightweight, corrosion-resistant properties and high strength-to-weight ratio. The drum design included internal perforations to allow water to flow efficiently during wash and spin cycles. The cylindrical portion ensured even distribution and rotation of clothes, while the truncated section helped with stability and water flow management.</p>
+                </div>
+                <div class="subcard">
+                    <h3>Rotational Motion</h3>
+                    <img src="images/rotationalmotionofdrum.png" alt="Chain and Sprocket" onclick="openModal(this)" style="cursor: pointer;">
+                    <p>Rotational motion of the drum was driven by the pedal-powered chain and sprocket system, designed to reach 200 rpm for washing and 800 rpm for spinning. The design incorporated centrifugal principles to expel water during the spin cycle. Torque and speed were tuned using the gear ratio between the input and output shafts, with a 3:1 and 7:1 ratio used for wash and spin cycles respectively. Ensuring smooth, balanced rotation was critical for efficiency and user comfort, and was achieved through proper drum geometry and bearing placement.</p>
+                </div>
+                <div class="subcard">
+                    <h3>Assembly of Washing Machine</h3>
+                    <img src="images/assemblyofwashingmachine.png" alt="Chain and Sprocket" onclick="openModal(this)" style="cursor: pointer;">
+                    <p>The full assembly was developed in SolidWorks, integrating ergonomic, structural, and mechanical considerations. Key components include the aluminum frame, adjustable recumbent seat, pedal drivetrain, transmission system, and washing drum. The layout prioritizes compactness and user accessibility, allowing a single seated individual to operate the machine comfortably. Modular design enabled easy maintenance and transport, and all major loads were routed through strategically reinforced components to ensure a safety factor of at least 2.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Impact Reducing Bumper System -->
+    <div class="card-container">
         <div class="cardgen">
             <h3>Impact Reducing Bumper System</h3>
             <div class="subcard-container">
@@ -438,8 +479,7 @@
     </div>
 
     <!-- Lego EV3 -->
-    <div class="card-container">
-        
+    <div class="card-container"> 
         <div class="cardgen">
             <h3>EV3 Delivery Robot</h3>
             <div class="subcard-container">
